@@ -2,27 +2,27 @@ package dto;
 
 public class Product {
 
-    private int productID;
-    private String productName;
-    private int Price;
-    private int quantity;
+    private int productId; // 상품번호
+    private String productName; // 상품명
+    private int Price; // 가격
+    private int quantity; // 재고수량
 
     public Product() {
     }
 
-    public Product(int productID, String productName, int price, int quantity) {
-        this.productID = productID;
+    public Product(int productId, String productName, int price, int quantity) {
+        this.productId = productId;
         this.productName = productName;
         this.Price = price;
         this.quantity = quantity;
     }
 
-    public int getProductID() {
-        return productID;
+    public int getProductId() {
+        return productId;
     }
 
-    public void setProductID(int productID) {
-        this.productID = productID;
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 
     public String getProductName() {
@@ -52,7 +52,7 @@ public class Product {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Product{");
-        sb.append("productID=").append(productID);
+        sb.append("productID=").append(productId);
         sb.append(", productName='").append(productName).append('\'');
         sb.append(", Price=").append(Price);
         sb.append(", quantity=").append(quantity);
