@@ -1,6 +1,7 @@
 package service;
 
 import dto.Product;
+import exception.ProductNotFoundException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,12 +26,31 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void updateProduct(int productId, String productName, int price, int quantity) {
+    public void updateProduct(int productId, String productName, int price, int quantity) throws ProductNotFoundException {
+
+            Product target = findById(productId);
+
+            target.setProductName(productName);
+            target.setPrice(price);
+            target.setQuantity(quantity);
+
 
     }
 
     @Override
-    public void deleteProduct(int productId) {
+    public void deleteProduct(int productId) throws ProductNotFoundException {
+        Product target = findById(productId);
+        productList.remove(target);
 
     }
+
+    private Product findById(int productId) throws ProductNotFoundException{
+        for(Product product : productList){
+            if (product.getProductId() == productId){
+                return product;
+            }
+        }
+        throw new ProductNotFoundException("상품번호 " + productId + "번을 찾을 수 없습니다.");
+    }
+
 }

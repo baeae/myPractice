@@ -7,7 +7,7 @@ public class Product {
     private int Price; // 가격
     private int quantity; // 재고수량
 
-    public Product() {
+    public Product(String name, int price, int quantity) {
     }
 
     public Product(int productId, String productName, int price, int quantity) {
