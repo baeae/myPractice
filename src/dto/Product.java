@@ -4,16 +4,21 @@ public class Product {
 
     private int productId; // 상품번호
     private String productName; // 상품명
-    private int Price; // 가격
+    private int price; // 가격
     private int quantity; // 재고수량
 
+    public Product() {}
+
     public Product(String name, int price, int quantity) {
+        this.productName = name;
+        this.price = price;
+        this.quantity = quantity;
     }
 
     public Product(int productId, String productName, int price, int quantity) {
         this.productId = productId;
         this.productName = productName;
-        this.Price = price;
+        this.price = price;
         this.quantity = quantity;
     }
 
@@ -34,11 +39,11 @@ public class Product {
     }
 
     public int getPrice() {
-        return Price;
+        return price;
     }
 
     public void setPrice(int price) {
-        this.Price = price;
+        this.price = price;
     }
 
     public int getQuantity() {
@@ -49,14 +54,9 @@ public class Product {
         this.quantity = quantity;
     }
 
+
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Product{");
-        sb.append("productID=").append(productId);
-        sb.append(", productName='").append(productName).append('\'');
-        sb.append(", Price=").append(Price);
-        sb.append(", quantity=").append(quantity);
-        sb.append('}');
-        return sb.toString();
+        return String.format("%-6d %-15s %5d %5d", productId, productName, price, quantity);
     }
 }
