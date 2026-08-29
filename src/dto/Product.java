@@ -7,20 +7,12 @@ public class Product {
     private int price; // 가격
     private int quantity; // 재고수량
 
-    public Product() {}
-
     public Product(String name, int price, int quantity) {
         this.productName = name;
         this.price = price;
         this.quantity = quantity;
     }
 
-    public Product(int productId, String productName, int price, int quantity) {
-        this.productId = productId;
-        this.productName = productName;
-        this.price = price;
-        this.quantity = quantity;
-    }
 
     public int getProductId() {
         return productId;
@@ -30,24 +22,12 @@ public class Product {
         this.productId = productId;
     }
 
-    public String getProductName() {
-        return productName;
-    }
-
     public void setProductName(String productName) {
         this.productName = productName;
     }
 
-    public int getPrice() {
-        return price;
-    }
-
     public void setPrice(int price) {
         this.price = price;
-    }
-
-    public int getQuantity() {
-        return quantity;
     }
 
     public void setQuantity(int quantity) {

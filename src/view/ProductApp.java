@@ -116,8 +116,8 @@ public class ProductApp {
         while (true) {
             System.out.println(message);
             if (sc.hasNextInt()) {
-                int value = sc.nextInt();
-                return value;
+
+                return sc.nextInt();
             }else{
                 System.out.println("[오류] 숫자만입력해주세요.");
                 sc.next();
